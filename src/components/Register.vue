@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <h1>Register</h1>
     <form>
         <input type="text"
@@ -18,7 +18,7 @@
         @click.prevent="register"
         >Register</button>
     </form>
-  </div>
+  </main>
 </template>
 
 <script>

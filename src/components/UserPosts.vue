@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <h1>{{this.posts.username}} Posts</h1>
     <div class="wrapper">
 
@@ -13,7 +13,7 @@
       </div>
 
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <h1>New Post</h1>
     <form>
         <input type="text"
@@ -26,12 +26,14 @@
                 <router-link :to="'newPost/'+post.id">
                     <button>Update Post</button>
                 </router-link>
-                <button @click="deletePost(post.id)">Delete Post</button>
+                <button 
+                @click="deletePost(post.id)
+                ">Delete Post</button>
             </div>
         </div>
     </div>
 
-  </div>
+  </main>
 </template>
 
 <script>
@@ -72,25 +74,27 @@ export default {
                 this.newPost = data
                 console.log(data)
             })
+
+            
         },
 
         deletePost(userid) {
-            const deletedpost = {
-                secretKey: localStorage.getItem('blogVue'),
-                id: userid
-            }
+                const deletedpost = {
+                    secretKey: localStorage.getItem('blogVue'),
+                    id: userid
+                }
 
-            fetch('http://167.99.138.67:1111/deletepost', {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json"
-            },
-            body: JSON.stringify(deletedpost)
-            })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            })
+                fetch('http://167.99.138.67:1111/deletepost', {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(deletedpost)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                })
         }
     },
 
@@ -103,6 +107,12 @@ export default {
             this.userPosts = data.data
             console.log(this.userPosts)
         })
+    },
+
+    watch: {
+        newPost: function() {
+            this.$router.go()
+        }
     }
 
 }

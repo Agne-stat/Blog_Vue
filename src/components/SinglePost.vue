@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <h1>Post</h1>
     <div class="wrapper">
 
@@ -11,7 +11,7 @@
       </div>
 
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

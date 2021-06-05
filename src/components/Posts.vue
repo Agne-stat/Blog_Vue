@@ -1,7 +1,10 @@
 <template>
-  <div>
+  <main>
     <h1>Posts</h1>
     <div class="wrapper">
+
+
+      <button @click="filterByDate">See new Posts</button>
 
       <div class="post"
         v-for="(post,index) in posts"
@@ -9,7 +12,6 @@
             <router-link :to="'/post/'+post.username+'/'+post.id">
               <img :src="post.image" alt="">
             </router-link>
-            
 
             <router-link :to="'/post/'+post.username">
               <p>{{post.username}}</p>
@@ -25,7 +27,7 @@
       </div>
 
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -35,6 +37,14 @@ export default {
   data() {
     return {
       posts: null,
+      search: ''
+    }
+  },
+
+  methods: {
+    filterByDate() {
+      this.posts.sort((a,b) => b.timestamp - a.timestamp)
+      console.log(this.posts)
     }
   },
 
@@ -45,7 +55,9 @@ export default {
       this.posts = data.data
       console.log(this.posts)
     })
-  }
+  },
+
+  
   
 }
 </script>

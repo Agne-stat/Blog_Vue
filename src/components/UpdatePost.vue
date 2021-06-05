@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <h1>Update Post</h1>
     <form>
         <input type="text"
@@ -13,7 +13,7 @@
 
     </form>
 
-  </div>
+  </main>
 </template>
 
 <script>

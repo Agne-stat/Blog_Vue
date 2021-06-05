@@ -17,30 +17,7 @@ const routes = [
     component: Home
   },
 
-  {
-    path: '/register',
-    name: 'Register',
-    component: Register
-  },
-
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login
-  },
-
-  {
-    path: '/newPost',
-    name: 'NewPost',
-    component: NewPost
-  },
-
-  {
-    path: '/newPost/:id',
-    name: 'UpdatePost',
-    component: UpdatePost
-  },
-
+  //all users posts
   {
     path: '/post/:name',
     name: 'UserPosts',
@@ -53,8 +30,31 @@ const routes = [
     component: SinglePost
   },
 
+  //user account
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
+  },
 
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
 
+  // logedin user posts
+  {
+    path: '/newPost',
+    name: 'NewPost',
+    component: NewPost
+  },
+
+  {
+    path: '/newPost/:id',
+    name: 'UpdatePost',
+    component: UpdatePost
+  },
 ]
 
 const router = new VueRouter({

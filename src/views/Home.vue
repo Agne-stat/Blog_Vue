@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <main>
     <h1>Homepage</h1>
     <Posts></Posts>
-  </div>
+  </main>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <main>
     <h1>Login</h1>
-    <form>
+    <form v-if="!loginState">
         <input type="text"
         required
         v-model="user.name">
@@ -10,11 +10,14 @@
         required
         v-model="user.password">
 
+
         <button
         @click.prevent="login"
         >Login</button>
     </form>
-  </div>
+
+    <p v-if="loginState">Welcome !</p>
+  </main>
 </template>
 
 <script>
@@ -26,7 +29,9 @@ export default {
           user: {
               name: '',
               password: ''
-          }
+          },
+          loginState: false,
+
       }
   },
 
@@ -50,11 +55,18 @@ export default {
             console.log(data.secretKey)
             localStorage.setItem('blogVue', data.secretKey)
             localStorage.setItem('blogVue_username', user.name)
+            this.loginState = true
         })
 
     }
       
-  }
+  },
+
+  watch: {
+        loginState: function() {
+            this.$router.go()
+        }
+    }
   
 }
 </script>
