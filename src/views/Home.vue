@@ -1,15 +1,23 @@
 <template>
-  <div class="home">
+  <div>
     <h1>Homepage</h1>
-    <h2>Homepage2</h2>
+    <Posts></Posts>
   </div>
 </template>
 
 <script>
+import Posts from '../components/Posts.vue'
+
 export default {
   name: 'Home',
+
   components: {
-    
+    Posts
   }
+  
 }
 </script>
+
+<style scoped>
+
+</style>
