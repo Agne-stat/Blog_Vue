@@ -54,6 +54,7 @@
                 </div>
             </div>
         </div>
+
       </div>
 
   </main>
@@ -74,7 +75,9 @@ export default {
             userPosts: null,
             errorMessage1: '',
             errorMessage2: '',
-            errorMessage3: ''
+            errorMessage3: '',
+            modalStatus: false,
+            delete: false
         }
     },
 
@@ -137,7 +140,17 @@ export default {
                     console.log(data)
                     this.$router.go()
                 })
-        }
+        },
+
+        modalCancel() {
+            this.delete = false,
+            this.modalStatus = false
+        },
+
+        modalDelete() {
+            this.delete = true,
+            this.modalStatus = false
+        },
     },
 
     created() {

@@ -98,7 +98,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-content: space-between;
-  background-color: #cbf3f0;
+  border: 2px solid #cbf3f0;
   cursor: pointer;
   border-radius: 20px;
 }
@@ -118,11 +118,12 @@ export default {
 
 .posts-container .posts .post .post-img img {
   width: 100%;
-  height: auto;
+  height: 100%;
   align-self: flex-start;
 }
 
 .posts-container .posts .post .post-username {
+  margin-top: 10px;
   width: 100%;
   height: 5%;
   color: #ff9f1c;
@@ -151,7 +152,8 @@ export default {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: #ff9f1c;
+  color: #fff;
 }
 
 .posts-container .posts .post .post-button button:hover {
