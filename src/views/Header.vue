@@ -5,8 +5,8 @@
               <li><router-link to="/">Home</router-link></li>
               <li v-if="!logedin"><router-link to="/register">Register</router-link></li>
               <li v-if="!logedin"><router-link to="/login">Login</router-link></li>
-              <li v-if="logedin"><router-link to="/newPost">Create Blog</router-link></li>
-              <li v-if="logedin" @click="logout"><router-link to="/">Logout</router-link></li>
+              <li v-if="logedin"><router-link to="/newPost">My Blog</router-link></li>
+              <li v-if="logedin" @click="logout"><router-link exact to="/">Logout</router-link></li>
           </ul>
       </nav>
   </header>
