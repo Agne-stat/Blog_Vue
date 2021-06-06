@@ -1,33 +1,35 @@
 <template>
-  <main>
-    <h1>Posts</h1>
-    <div class="wrapper">
+  <div class="posts-container">
+      <button class="sort-posts" @click="filterByDate">See new Posts</button>
 
+      <div class="posts">
+        <div class="post"
+          v-for="(post,index) in posts"
+          :key="index">
+              <router-link :to="'/post/'+post.username+'/'+post.id" class="post-img">
+                <img :src="post.image" alt="">
+              </router-link>
 
-      <button @click="filterByDate">See new Posts</button>
+              <router-link :to="'/post/'+post.username" class="post-username">
+                <p>{{post.username}}</p>
+              </router-link>
 
-      <div class="post"
-        v-for="(post,index) in posts"
-        :key="index">
-            <router-link :to="'/post/'+post.username+'/'+post.id">
-              <img :src="post.image" alt="">
-            </router-link>
+              <router-link :to="'/post/'+post.username+'/'+post.id" class="post-title">
+                <h2>{{post.title | snippetTitle}}</h2>
+              </router-link>
+              
+              <router-link :to="'/post/'+post.username+'/'+post.id" class="post-content">
+                <p>{{post.description | snippet}}</p>
+              </router-link>
 
-            <router-link :to="'/post/'+post.username">
-              <p>{{post.username}}</p>
-            </router-link>
-            
-            <h2>{{post.title}}</h2>
-            <p>{{post.description}}</p>
-
-            <router-link :to="'/post/'+post.username+'/'+post.id">
-              <button>Read more</button>
-            </router-link>
-            
+              <router-link :to="'/post/'+post.username+'/'+post.id" class="post-button">
+                <button>Read more</button>
+              </router-link>
+              
+        </div>
       </div>
-
-    </div>
-  </main>
+      
+  </div>
 </template>
 
 <script>
@@ -63,5 +65,104 @@ export default {
 </script>
 
 <style scoped>
+.posts-container {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.posts-container .sort-posts {
+  padding: 10px 0;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff9f1c;
+  color: #fff;
+  font-size: 1em;
+}
+
+.posts-container .sort-posts:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.posts-container .posts {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.posts-container .posts .post {
+  margin: 20px 0;
+  padding: 0 20px;
+  width: 30%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+  background-color: #cbf3f0;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.posts-container .posts .post a {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.posts-container .posts .post .post-img {
+  width: 100%;
+  height: 60%;
+  align-self: flex-start;
+}
+
+.posts-container .posts .post .post-img img {
+  width: 100%;
+  height: auto;
+  align-self: flex-start;
+}
+
+.posts-container .posts .post .post-username {
+  width: 100%;
+  height: 5%;
+  color: #ff9f1c;
+}
+
+.posts-container .posts .post .post-title h2 {
+  width: 100%;
+  height: 10%;
+  color: #2ec4b6;
+}
+
+.posts-container .posts .post .post-content p {
+  padding: 20px 0;
+  width: 100%;
+  height: 20%;
+  color: #000;
+}
+
+.posts-container .posts .post .post-button  {
+  width: 100%;
+  height: 5%;
+}
+
+.posts-container .posts .post .post-button button {
+  padding: 5px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.posts-container .posts .post .post-button button:hover {
+  opacity: 0.6;
+}
+
+
 
 </style>

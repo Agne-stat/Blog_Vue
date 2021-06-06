@@ -1,13 +1,12 @@
 <template>
   <main>
-    <h1>Post</h1>
-    <div class="wrapper">
+    <div class="container">
 
       <div class="post">
             <img :src="this.userPost.image" alt="">
-            <p>{{this.userPost.username}}</p>
+            <p class="post-username">{{this.userPost.username}}</p>
             <h2>{{this.userPost.title}}</h2>
-            <p>{{this.userPost.description}}</p>
+            <p class="post-content">{{this.userPost.description}}</p>
       </div>
 
     </div>
@@ -41,4 +40,22 @@ export default {
 
 <style scoped>
 
+main .container .post{
+  margin: 20px 0;
+  width: 100%;
+}
+
+main .container .post img{
+  width: 100%;
+  height: auto;
+}
+
+main .container .post .post-username{
+  padding: 20px 0;
+  color: #ff9f1c;
+}
+
+main .container .post h2{
+  padding: 20px 0;
+}
 </style>

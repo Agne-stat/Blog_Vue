@@ -1,15 +1,14 @@
 <template>
   <main>
-    <h1>{{this.posts.username}} Posts</h1>
-    <div class="wrapper">
+    <div class="container">
 
       <div class="post"
         v-for="(post,index) in posts"
         :key="index">
             <img :src="post.image" alt="">
-            <p>{{post.username}}</p>
+            <p class="post-username">{{post.username}}</p>
             <h2>{{post.title}}</h2>
-            <p>{{post.description}}</p>
+            <p class="post-content">{{post.description}}</p>
       </div>
 
     </div>
@@ -41,5 +40,31 @@ export default {
 </script>
 
 <style scoped>
+main .container .post{
+  padding: 20px;
+  margin: 20px 0;
+  width: 100%;
+  background-color: #cbf3f0;
+}
+
+main .container .post img{
+  width: 100%;
+  height: auto;
+}
+
+main .container .post .post-username{
+  width: 100%;
+  padding: 20px 0;
+  color: #ff9f1c;
+}
+
+main .container .post h2{
+  width: 100%;
+  padding: 20px 0;
+}
+
+main .container .post .post-content{
+  width: 100%;
+}
 
 </style>

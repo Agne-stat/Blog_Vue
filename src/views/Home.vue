@@ -1,7 +1,8 @@
 <template>
   <main>
-    <h1>Homepage</h1>
-    <Posts></Posts>
+    <div class="container">
+      <Posts></Posts>
+    </div>
   </main>
 </template>
 
@@ -18,6 +19,14 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+main .container {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
 
 </style>

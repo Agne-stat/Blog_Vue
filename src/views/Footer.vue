@@ -17,6 +17,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    footer p {
+        padding: 10px;
+        text-align: center;
+        color: #fff;
+    }
 </style>

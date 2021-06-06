@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <router-view/>
-    <Footer></Footer>
+    <div class="wrapper">
+      <Header></Header>
+      <router-view/>
+      <Footer></Footer>
+    </div>
   </div>
 </template>
 
@@ -21,24 +23,47 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
 }
 
-#nav {
-  padding: 30px;
+body {
+  width: 100vw;
+  min-height: 100vh;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+body #app {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+#app .wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+#app .wrapper header {
+  width: 100%;
+  height: 8vh;
+  background-color: #2ec4b6;
+}
+
+#app .wrapper main {
+  width: 100%;
+  min-height: 87vh;
+}
+
+#app .wrapper footer {
+  width: 100%;
+  height: 5vh;
+  background-color: #2ec4b6;
+}
+
 </style>
