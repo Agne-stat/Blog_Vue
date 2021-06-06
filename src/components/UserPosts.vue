@@ -32,7 +32,6 @@ export default {
     .then(res => res.json())
     .then(data => {
       this.posts = data.data
-      console.log(this.posts)
     })
   }
   

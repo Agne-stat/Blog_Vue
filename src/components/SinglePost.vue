@@ -31,7 +31,6 @@ export default {
     .then(res => res.json())
     .then(data => {
       this.userPost = data.data
-      console.log(this.userPost)
     })
   }
   

@@ -46,7 +46,6 @@ export default {
   methods: {
     filterByDate() {
       this.posts.sort((a,b) => b.timestamp - a.timestamp)
-      console.log(this.posts)
     }
   },
 
@@ -55,12 +54,8 @@ export default {
     .then(res => res.json())
     .then(data => {
       this.posts = data.data
-      console.log(this.posts)
     })
   },
-
-  
-  
 }
 </script>
 

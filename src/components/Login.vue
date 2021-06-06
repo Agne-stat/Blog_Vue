@@ -47,7 +47,6 @@ export default {
           errorMessage1: '',
           errorMessage2: '',
           errorMessage3: '',
-
       }
   },
 
@@ -81,8 +80,6 @@ export default {
             })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                console.log(data.secretKey)
                 localStorage.setItem('blogVue', data.secretKey)
                 localStorage.setItem('blogVue_username', user.name)
 

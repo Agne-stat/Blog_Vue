@@ -62,7 +62,6 @@ export default {
         .then(res => res.json())
         .then(data => {
             this.post = data.data
-            console.log(this.post)
         })
     },
 
@@ -103,7 +102,6 @@ export default {
                 .then(res => res.json())
                 .then(data => {
                     this.post = data
-                    console.log(data)
                     window.location.href="http://localhost:8080/newPost";
                 })
             }

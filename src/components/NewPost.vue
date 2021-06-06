@@ -54,7 +54,6 @@
                 </div>
             </div>
         </div>
-
       </div>
 
   </main>
@@ -115,7 +114,6 @@ export default {
                 .then(res => res.json())
                 .then(data => {
                     this.newPost = data
-                    console.log(data)
                 })
             }
 
@@ -149,7 +147,6 @@ export default {
         .then(res => res.json())
         .then(data => {
             this.userPosts = data.data.sort((a,b) => b.timestamp - a.timestamp)
-            console.log(this.userPosts)
         })
     },
 
