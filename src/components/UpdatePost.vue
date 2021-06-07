@@ -13,7 +13,7 @@
 
             <div>
                 <label for="image">Post image</label>
-                <input type="text"
+                <input type="url"
                 v-model="post.image"
                 @input="reset2"
                 placeholder="has to include http">

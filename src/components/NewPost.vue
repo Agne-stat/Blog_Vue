@@ -14,7 +14,7 @@
 
             <div>
                 <label for="image">Post image</label>
-                <input type="text"
+                <input type="url"
                 v-model="newPost.image"
                 @input="reset2"
                 placeholder="has to include http">
@@ -76,8 +76,6 @@ export default {
             errorMessage1: '',
             errorMessage2: '',
             errorMessage3: '',
-            modalStatus: false,
-            delete: false
         }
     },
 
@@ -123,34 +121,24 @@ export default {
         },
 
         deletePost(userid) {
-                const deletedpost = {
-                    secretKey: localStorage.getItem('blogVue'),
-                    id: userid
-                }
+            const deletedpost = {
+                secretKey: localStorage.getItem('blogVue'),
+                id: userid
+            }
 
-                fetch('http://167.99.138.67:1111/deletepost', {
-                method: "POST",
-                headers: {
-                    "Content-type": "application/json"
-                },
-                body: JSON.stringify(deletedpost)
-                })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    this.$router.go()
-                })
-        },
-
-        modalCancel() {
-            this.delete = false,
-            this.modalStatus = false
-        },
-
-        modalDelete() {
-            this.delete = true,
-            this.modalStatus = false
-        },
+            fetch('http://167.99.138.67:1111/deletepost', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(deletedpost)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                this.$router.go()
+            })
+        }
     },
 
     created() {
@@ -168,7 +156,6 @@ export default {
             this.$router.go()
         }
     }
-
 }
 </script>
 
